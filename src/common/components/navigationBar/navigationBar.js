@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "../../../styles/globalStyledComponents.js";
 import { NavBar } from "../../../styles/styledComponents.js";
 
-const NavigationBar = ({ color, mobile }) => {
+const NavigationBar = ({ color, mobile, mr, justifyContent, flexWrap }) => {
   return (
-    <NavBar>
-      <NavLink color={color} href="/complex">
+    <NavBar justifyContent={justifyContent} flexWrap={flexWrap}>
+      <NavLink mr={mr} color={color} href="/complex">
         О комплексе
       </NavLink>
-      <NavLink color={color} href="/blog">
+      <NavLink mr={mr} color={color} href="/blog">
         Блог
       </NavLink>
-      <NavLink color={color} href="/faq">
+      <NavLink mr={mr} color={color} href="/faq">
         FAQ
       </NavLink>
       {mobile && (
         <>
-          <NavLink color={color} href="/complex">
+          <NavLink mr={mr} color={color} href="/complex">
             Афиша
           </NavLink>
-          <NavLink color={color} href="/blog">
+          <NavLink mr={mr} color={color} href="/blog">
             Спецпредложения
           </NavLink>
-          <NavLink color={color} href="/faq">
+          <NavLink mr={mr} color={color} href="/faq">
             Важная информация
           </NavLink>
         </>
       )}
-      <NavLink color={color} href="/contacts">
+      <NavLink mr={mr} color={color} href="/contacts">
         Контакты
       </NavLink>
     </NavBar>

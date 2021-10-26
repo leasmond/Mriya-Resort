@@ -1,10 +1,6 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
-import {
-  Row,
-  SwiperCustom,
-  SwiperSlideCustom,
-} from "../../../../styles/globalStyledComponents";
+import { Row, SwiperCustom } from "../../../../styles/globalStyledComponents";
 import "react-tabs/style/react-tabs.css";
 import Special from "./special";
 import One from "../../../../assets/images/one.png";
@@ -48,30 +44,20 @@ const specialsData = [
     title: "Раннее бронирование",
   },
 ];
-console.log(screenWidth);
+
 const TabPanelCustom = ({ variantTwo }) => {
   return (
     <Row mrM="0" mr="-140px">
-      {/* {screenWidth > 1024 ? ( */}
       <SwiperCustom
         direction={screenWidth > 1024 ? "horizontal" : "vertical"}
         slidesPerView={"auto"}
       >
-        {specialsData.map((item) => (
-          <SwiperSlide>
+        {specialsData.map((item, index) => (
+          <SwiperSlide key={index}>
             <Special item={item} variantTwo={variantTwo} />
           </SwiperSlide>
         ))}
       </SwiperCustom>
-      {/* ) : (
-        <SwiperCustom direction={"vertical"} slidesPerView={2}>
-          {specialsData.map((item) => (
-            <SwiperSlide>
-              <Special item={item} variantTwo={variantTwo} />
-            </SwiperSlide>
-          ))}
-        </SwiperCustom>
-      )} */}
     </Row>
   );
 };

@@ -40,7 +40,7 @@ export const TabsContainer = () => {
           <STab>Категории отдыха</STab>
           <Row displayM="none" position="absolute" top="0" right="0">
             <Circle
-              cursor
+              cursor="pointer"
               hover
               width="30px"
               height="30px"
@@ -49,7 +49,7 @@ export const TabsContainer = () => {
             >
               <LeftArrowIcon />
             </Circle>
-            <Circle cursor hover width="30px" height="30px" onClick={nextTabs}>
+            <Circle cursor="pointer" hover width="30px" height="30px" onClick={nextTabs}>
               <RightArrowIcon />
             </Circle>
           </Row>
@@ -63,8 +63,8 @@ export const TabsContainer = () => {
           background="#3D3C3C"
           opacity="0.08"
         />
-        {[false, false, true].map((item) => (
-          <TabPanel>
+        {[false, false, true].map((item, index) => (
+          <TabPanel key={index}>
             <TabPanelCustom variantTwo={item} />
           </TabPanel>
         ))}

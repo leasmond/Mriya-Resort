@@ -1,5 +1,5 @@
 import styled, { css, createGlobalStyle } from "styled-components";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, Tabs, TabList } from "react-tabs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { media } from "./media";
 
@@ -130,6 +130,7 @@ const NavLink = styled.a`
       : props.theme.palette.black.main};
   margin-right: ${(props) => props.mr};
   margin-left: ${(props) => props.ml};
+  margin-bottom: ${(props) => props.mb};
   &:hover {
     color: ${(props) => props.theme.palette.gold.main};
   }
@@ -208,6 +209,7 @@ const Row = styled.div`
   max-width: ${(props) => props.maxWidth};
   min-width: ${(props) => props.minWidth};
   height: ${(props) => props.height};
+  min-height: ${(props) => props.minHeight};
   border: ${(props) => props.border};
   border-radius: ${(props) => props.borderRadius};
   top: ${(props) => props.top};
@@ -386,6 +388,9 @@ const Subtitle = styled.p`
   width: ${(props) => props.width};
   max-width: ${(props) => props.maxWidth};
   min-width: ${(props) => props.minWidth};
+  overflow: ${(props) => props.overflow};
+  white-space: ${(props) => props.whiteSpace};
+  text-overflow: ${(props) => props.textOverflow};
   ${media.mobile} {
     display: ${(props) => props.displayM};
     margin-top: ${(props) => props.mtM};
@@ -398,6 +403,13 @@ const Subtitle = styled.p`
     css`
       &:hover {
         background: rgba(217, 194, 135, 0.16);
+      }
+    `}
+  ${(props) =>
+    props.hoverText &&
+    css`
+      &:hover {
+        color: rgba(217, 194, 135, 1);
       }
     `}
 `;
@@ -425,7 +437,8 @@ const Circle = styled.div`
     props.borderRadius ? props.borderRadius : "46px"};
   height: ${(props) => (props.height ? props.height : "46px")};
   width: ${(props) => (props.width ? props.width : "46px")};
-  cursor: ${(props) => props.cursor && "pointer"};
+  min-width: ${(props) => props.minWidth};
+  cursor: ${(props) => props.cursor};
   background: ${(props) => props.background};
   position: ${(props) => props.position};
   top: ${(props) => props.top};

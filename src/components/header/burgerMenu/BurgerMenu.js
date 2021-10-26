@@ -7,7 +7,6 @@ import {
   Column,
   Line,
   Row,
-  Link,
   Subtitle,
   Circle,
   NavLink,
@@ -31,55 +30,9 @@ import {
 import SwiperCore, { Autoplay, Pagination, Navigation } from "swiper";
 import Slider1 from "../../../assets/images/slider1.jpeg";
 import Slider2 from "../../../assets/images/slider2.jpeg";
+import { option } from "../data";
 
 SwiperCore.use([Autoplay, Pagination, Navigation]);
-
-const option = [
-  {
-    menu: "Размещение",
-    submenu: ["Транспорт", "Размещение", "Развлечения"],
-  },
-  {
-    menu: "Мероприятия",
-    submenu: ["Бары и рестораны", "Мероприятия", "Спорт"],
-  },
-  {
-    menu: "Красота и восстановлениe",
-    submenu: ["Детям", "Спорт", "Размещение"],
-  },
-  {
-    menu: "Бары и рестораны",
-    submenu: ["Медицина", "Размещение", "Мероприятия"],
-  },
-  {
-    menu: "Развлечения",
-    submenu: ["Размещение", "Транспорт", "Спорт"],
-  },
-  {
-    menu: "Спорт",
-    submenu: ["Мероприятия", "Детям", "Бары и рестораны"],
-  },
-  {
-    menu: "Детям",
-    submenu: ["Детям", "Развлечения", "Мероприятия"],
-  },
-  {
-    menu: "Транспорт",
-    submenu: ["Транспорт", "Детям", "Медицина"],
-  },
-  {
-    menu: "Медицина",
-    submenu: ["Развлечения", "Спорт", "Размещение"],
-  },
-  {
-    menu: "Мероприятия",
-    submenu: ["Медицина", "Детям", "Транспорт"],
-  },
-  {
-    menu: "Красота и восстановление",
-    submenu: ["123", "456", "789"],
-  },
-];
 
 export const BurgerMenu = ({ isOpen, wrapperRef }) => {
   const Block = ({ item }) => {
@@ -87,8 +40,8 @@ export const BurgerMenu = ({ isOpen, wrapperRef }) => {
       <UlBlock>
         <Column justifyContent="space-between" height="552px">
           <Column>
-            {item.submenu.map((i) => (
-              <LiBlock>{i}</LiBlock>
+            {item.submenu.map((i, index) => (
+              <LiBlock key={index}>{i}</LiBlock>
             ))}
           </Column>
           <Subtitle

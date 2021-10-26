@@ -18,7 +18,7 @@ import {
 import All1 from "../../../assets/images/all1.png";
 import All2 from "../../../assets/images/all2.png";
 import All3 from "../../../assets/images/all3.png";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
@@ -201,7 +201,7 @@ export const AllInclusive = () => {
             mr="16px"
             ref={navigationPrevRef}
             hover
-            cursor
+            cursor="pointer"
           >
             <LeftArrowIcon color="white" />
           </Circle>
@@ -210,7 +210,7 @@ export const AllInclusive = () => {
             width="40px"
             height="40px"
             background="#D9C287"
-            cursor
+            cursor="pointer"
             hover
           >
             <RightArrowIcon color="white" />

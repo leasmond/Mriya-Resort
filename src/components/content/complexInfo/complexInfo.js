@@ -1,11 +1,6 @@
 import { AbsractionIcon, WavesIcon } from "../../../assets/svg/icons";
 import { Button } from "../../../common/components";
-import {
-  Column,
-  H1,
-  H3,
-  Subtitle,
-} from "../../../styles/globalStyledComponents";
+import { Column, H3, Subtitle } from "../../../styles/globalStyledComponents";
 
 export const ComplexInfo = () => {
   return (

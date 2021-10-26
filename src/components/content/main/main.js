@@ -7,11 +7,8 @@ import {
   TwitterIcon,
   WavesThreeIcon,
 } from "../../../assets/svg/icons";
-import { SocialNetworks } from "../../../common/components";
 import {
-  ButtonLink,
   H1,
-  H3,
   Column,
   Circle,
   Row,

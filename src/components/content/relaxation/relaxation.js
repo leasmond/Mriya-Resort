@@ -3,7 +3,6 @@ import {
   CalendarIcon,
   HumanIcon,
 } from "../../../assets/svg/icons";
-import { Button } from "../../../common/components";
 import Select from "./select/select";
 import { ButtonStyle, H3, Row } from "../../../styles/globalStyledComponents";
 
@@ -32,9 +31,9 @@ export const Relaxation = () => {
         flexWrap
         mb="42px"
       >
-        <Row p="4px" width="100%" flexWrap>
+        <Row p="4px" width="100%" maxWidth="calc(100% - 8px)" flexWrap>
           {selectedData.map((item, index) => (
-            <Select index={index} item={item} />
+            <Select key={index} index={index} item={item} />
           ))}
         </Row>
         {/* <Button

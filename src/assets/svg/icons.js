@@ -114,7 +114,7 @@ export const DownTrigonIcon = () => {
     </svg>
   );
 };
-export const DownArrowIcon = () => {
+export const DownArrowIcon = ({ color }) => {
   return (
     <svg
       width="12"
@@ -125,7 +125,7 @@ export const DownArrowIcon = () => {
     >
       <path
         d="M5.3625 7.72816L0.2625 2.4466C0.0875 2.26537 0 2.04531 0 1.78641C0 1.52751 0.0875 1.30744 0.2625 1.12621L1.125 0.271845C1.3 0.0906149 1.5125 0 1.7625 0C2.0125 0 2.225 0.0906149 2.4 0.271845L6 4L9.6 0.271845C9.775 0.0906149 9.9875 0 10.2375 0C10.4875 0 10.7 0.0906149 10.875 0.271845L11.7375 1.12621C11.9125 1.30744 12 1.52751 12 1.78641C12 2.04531 11.9125 2.26537 11.7375 2.4466L6.6375 7.72816C6.4625 7.90939 6.25 8 6 8C5.75 8 5.5375 7.90939 5.3625 7.72816Z"
-        fill="#D9C287"
+        fill={color ? color : "#D9C287"}
       />
     </svg>
   );
@@ -442,7 +442,7 @@ export const WeatherContainerIcon = () => {
     </svg>
   );
 };
-export const AbsractionIcon = ({width, height}) => {
+export const AbsractionIcon = ({ width, height }) => {
   return (
     <svg
       width={width ? width : "62"}

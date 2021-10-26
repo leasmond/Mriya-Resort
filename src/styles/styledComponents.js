@@ -1,5 +1,7 @@
+import { Accordion, AccordionItemButton } from "react-accessible-accordion";
 import styled, { css } from "styled-components";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
+import { Column, Subtitle } from "./globalStyledComponents";
 import { media } from "./media";
 
 const HeaderContainer = styled.header`
@@ -7,6 +9,7 @@ const HeaderContainer = styled.header`
   position: relative;
   z-index: 1000;
   height: 79px;
+  min-height: 79px;
   border-bottom: 1px solid rgba(61, 60, 60, 0.08);
   justify-content: space-between;
   min-width: 320px;
@@ -27,7 +30,9 @@ const Wrapper = styled.div`
 
 const NavBar = styled.nav`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${(props) =>
+    props.justifyContent ? props.justifyContent : "space-between"};
+  flex-wrap: ${(props) => props.flexWrap};
   align-items: center;
   max-width: 470px;
   width: 100%;
@@ -126,7 +131,7 @@ const BurgerContainer = styled.div`
         : css`
             transform: translateX(-100%);
             transition: 0.4s;
-          `}
+          `};
   }
 `;
 
@@ -237,6 +242,7 @@ const LiBlock = styled.li`
   justify-content: space-between;
   color: white;
   width: ${(props) => (props.width ? props.width : "308px")};
+  margin-bottom: 32px;
   list-style: none;
   border-radius: 8px;
   font-family: Euclid Circular B;
@@ -286,9 +292,8 @@ const Li = styled.li`
   line-height: 32px;
   border-bottom: ${(props) => props.borderBottom};
   &:hover {
-    height: auto;
-    display: block;
-    ${"" /* background: rgba(217, 194, 135, 0.16); */}
+    display: flex;
+    background: rgba(217, 194, 135, 0.16);
     ${Visibile} {
       opacity: 1;
       height: auto;
@@ -314,6 +319,47 @@ const MySwiper = styled(Swiper)`
   }
 `;
 
+const AccordionItemButtonCustom = styled(AccordionItemButton)`
+  height: 56px;
+  display: flex;
+  align-items: center;
+  font-family: Euclid Circular B;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 32px;
+  padding: 0 16px;
+  color: white;
+  ${Column} {
+    display: none;
+  }
+  &[aria-expanded="true"] {
+    background: rgba(217, 194, 135, 0.16);
+    ${Subtitle} {
+      border-bottom: none;
+    }
+    ${Column} {
+      display: block;
+    }
+  }
+`;
+
+const AccordionCustom = styled(Accordion)`
+  width: 100%;
+  .accordion__panel {
+    padding: 6px 32px;
+    :last-child {
+      padding-bottom: 18px;
+    }
+    :nth-child(2) {
+      padding-top: 18px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+`;
+
 export {
   HeaderContainer,
   BurgerButton,
@@ -331,4 +377,6 @@ export {
   LiBlock,
   Visibile,
   MySwiper,
+  AccordionItemButtonCustom,
+  AccordionCustom,
 };
